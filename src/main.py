@@ -27,7 +27,9 @@ async def download_image(message: Message, bot: Bot):
     )
 
 async def run() -> None:
-    """ """
+    """
+    Runner bots
+    """
     log_name = f'logs/{datetime.now().strftime("%Y-%m-%d")}.log'
     Path(log_name).parent.mkdir(parents=True, exist_ok=True)
 
