@@ -10,14 +10,18 @@ from datetime import datetime
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters.command import Command
 from aiogram.types import Message
+from keyboards import keyboards
 
 
 dp = Dispatcher()
 
 
 @dp.message(Command("start"))
-async def start_cmd(message: Message):
-    await message.answer("Hello")
+async def start(message: Message):
+    await message.answer(
+        "Hello", 
+        reply_markup = keyboards.start_menu()
+    )
 
 @dp.message(F.photo)
 async def download_image(message: Message, bot: Bot):
